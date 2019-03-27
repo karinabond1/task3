@@ -1,7 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: karin
- * Date: 27.03.2019
- * Time: 14:46
- */
+
+
+
+define('FILE_DATA', 'E:/PHP/OSPanel/domains/GFL/php_task1/task3/file.txt');
