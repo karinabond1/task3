@@ -1,6 +1,5 @@
 <?php
-$file = new File(FILE_DATA);
-
+include_once "E:/PHP/OSPanel/domains/GFL/php_task1/task3/index.php";
 ?>
 
 <!doctype html>
@@ -13,6 +12,20 @@ $file = new File(FILE_DATA);
     <title>task3</title>
 </head>
 <body>
-<? echo $str=$file->showStr();?>
+<? echo "string = ".$str."<br>Symbol = ".$sym."<br>";
+foreach($all_str as $str){
+    echo $str."<br>";
+}
+foreach($all_sym as $str){
+    echo $str." ";
+}
+foreach($file_repl as $str){
+    echo $str."<br>";
+}
+foreach($file_repl_sym as $str){
+    echo $str." ";
+}
+//print_r($file_repl);
+?>
 </body>
 </html>

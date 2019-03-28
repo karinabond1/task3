@@ -32,14 +32,6 @@ class File
         return $this->arr;
     }
 
-    public function showStr()
-    {
-        foreach ($this->arr as $name => $value) {
-
-                return $value;
-
-        }
-    }
 
     public function getString($num)
     {
@@ -64,9 +56,51 @@ class File
         }
     }
 
-    public function show($str)
+    public function replaceStr($num, $str)
     {
-        echo $str."<br>";
+        foreach ($this->arr as $name => $value) {
+            if ($name + 1 == $num) {
+                $this->arr[$name] = $str;
+                return $this->showStr();
+            }
+        }
+    }
+
+    public function replaceSym($numstr, $numsym, $str)
+    {
+        foreach ($this->arr as $name => $value) {
+            if ($name + 1 == $numstr) {
+                $arr = str_split($value);
+                foreach ($arr as $key => $sym) {
+                    if ($key + 1 == $numsym) {
+                        $this->arr[$name][$key]=$str;
+                        return $this->showSym();
+                    }
+                }
+            }
+        }
+    }
+
+    public function showStr()
+    {
+        $arr = array();
+        foreach ($this->arr as $name => $value) {
+            array_push($arr, $value);
+        }
+        return $arr;
+    }
+
+    public function showSym()
+    {
+        $arr = array();
+        $array = array();
+        foreach ($this->arr as $name => $value) {
+            $arr = str_split($value);
+            foreach ($arr as $key => $sym) {
+                array_push($array, $sym);
+            }
+        }
+        return $array;
     }
 
 }
